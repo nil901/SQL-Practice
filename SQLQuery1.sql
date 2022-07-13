@@ -136,7 +136,65 @@ SELECT * FROM Student1 WHERE City NOT IN ('pune')
 SELECT * FROM Courses WHERE Courses 
 
 --SELECT * FROM Products
---WHERE Price BETWEEN 10 AND 20;
+--WHERE Price BETWEEN 10 AND 20; 
+
+
+--SELECT * FROM Products
+--WHERE Price BETWEEN 10 AND 20; 
+SELECT * FROM  Courses WHERE CourseFee BETWEEN 1500 AND  12000  
+
+---SQL aliases are used to give a table, or a column in a table, a temporary name.
+--Aliases are often used to make column names more readable.
+--An alias is created with the AS keyword. 
+
+ SELECT CourseId As  ID FROM Courses  
+ SELECT StudentName AS NAME FROM Student1
+
+ SELECT StudentId AS Id , StudentName AS NAME  FROM Student1 
+
+--SQL JOIN 
+--A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+-- Right Join  
+SELECT   s.StudentId 
+         ,s.StudentName,
+		 s.Age ,
+		 s.City,
+		 s.[Address],
+		 c.CourseId,
+		 c.CourseName,
+		 c.DurationTime,
+		 CourseFee
+    FROM  Student1 s
+	   RIGHT JOIN Courses c  ON s.CourseId = c.CourseId 
+ 
+-- LEFT JOIN
+
+ SELECT   s.StudentId 
+         ,s.StudentName,
+		 s.Age ,
+		 s.City,
+		 s.[Address],
+		 c.CourseId,
+		 c.CourseName,
+		 c.DurationTime,
+		 CourseFee
+    FROM  Student1 s
+	   LEFT JOIN Courses c  ON s.CourseId = c.CourseId 
+   
+	 SELECT   s.StudentId 
+         ,s.StudentName,
+		 s.Age ,
+		 s.City,
+		 s.[Address],
+		 c.CourseId,
+		 c.CourseName,
+		 c.DurationTime,
+		 CourseFee
+        FROM  Student1 s
+	   INNER JOIN Courses c  ON s.CourseId = c.CourseId  
+
+
 
 
  SELECT * FROM Student1 
