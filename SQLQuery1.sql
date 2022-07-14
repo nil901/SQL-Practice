@@ -1,3 +1,5 @@
+  
+
 
 
  
@@ -193,6 +195,11 @@ SELECT   s.StudentId
 		 CourseFee
         FROM  Student1 s
 	   INNER JOIN Courses c  ON s.CourseId = c.CourseId  
+	   
+--The SQL GROUP BY Statement  
+
+SELECT COUNT (CourseFee ) FROM Courses 
+GROUP BY  COUNT(DurationTime ) DESC
 
 
 
